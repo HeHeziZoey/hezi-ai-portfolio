@@ -36,7 +36,7 @@ export const projects: Project[] = [
     imageSrc: "/project-01.webp",
     imageAlt: "AI Beauty Insight Platform 首页，展示消费者声音、评论证据与洞察卡片",
     caseStudyUrl: null,
-    liveDemoUrl: null,
+    liveDemoUrl: "https://insight.hezibeautech.online/",
   },
   {
     id: "project-02",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     imageSrc: "/project-02.webp",
     imageAlt: "美妆品牌 AI 素材增长系统首页，展示内容工作流与橙色增长轨迹",
     caseStudyUrl: null,
-    liveDemoUrl: null,
+    liveDemoUrl: "https://www.hezibeautech.online/",
   },
   {
     id: "project-03",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     imageSrc: "/project-03.webp",
     imageAlt: "企业 AI 工具评测与选型系统首页，展示模型评估、证据校验与人工决策门",
     caseStudyUrl: null,
-    liveDemoUrl: null,
+    liveDemoUrl: "https://growth.hezibeautech.online",
   },
 ];
 

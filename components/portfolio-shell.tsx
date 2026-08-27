@@ -52,7 +52,7 @@ function HeroProfile() {
         <div className="profile-position-lines" aria-label="求职方向">
           <span>AI项目专员</span>
           <span>AI内容增长</span>
-          <span>AI应用运营</span>
+          <span>AI产品运营</span>
         </div>
         <h1 id="profile-name">{profile.name}</h1>
         <h2>

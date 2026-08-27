@@ -3783,7 +3783,7 @@ a.directory-action:focus-visible {
   list-style: none;
 }
 
-.project-overview-delivery button {
+.project-overview-delivery a {
   display: grid;
   min-height: 70px;
   padding: 12px 20px;
@@ -3791,16 +3791,17 @@ a.directory-action:focus-visible {
   border-radius: 30px;
   color: color-mix(in srgb, var(--project-accent) 28%, #161616);
   background: color-mix(in srgb, var(--project-accent) 52%, #efefed);
-  cursor: not-allowed;
+  cursor: pointer;
   opacity: 1;
+  text-decoration: none;
 }
 
-.project-overview-delivery button span {
+.project-overview-delivery a span {
   font-size: clamp(18px, 1.6vw, 24px);
   font-weight: 740;
 }
 
-.project-overview-delivery button small {
+.project-overview-delivery a small {
   font-size: 8px;
   font-weight: 650;
   letter-spacing: 0.08em;
@@ -3987,7 +3988,7 @@ a.directory-action:focus-visible {
   object-fit: cover;
 }
 
-.social-evidence-item button {
+.social-evidence-item a {
   display: grid;
   min-height: 42px;
   padding: 8px 16px;
@@ -3995,16 +3996,17 @@ a.directory-action:focus-visible {
   border-radius: 30px;
   color: var(--cream);
   background: var(--ink);
-  cursor: not-allowed;
+  cursor: pointer;
   opacity: 1;
+  text-decoration: none;
 }
 
-.social-evidence-item button span {
+.social-evidence-item a span {
   font-size: 13px;
   font-weight: 700;
 }
 
-.social-evidence-item button small {
+.social-evidence-item a small {
   font-size: 7px;
   letter-spacing: 0.08em;
   opacity: 0.68;
@@ -4364,7 +4366,7 @@ a.directory-action:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .project-overview-delivery button {
+  .project-overview-delivery a {
     min-height: 62px;
   }
 

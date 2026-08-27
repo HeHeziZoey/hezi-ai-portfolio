@@ -87,10 +87,15 @@ function ProjectOverview() {
                 <ul aria-label="项目实现方式">
                   {buildNotes.slice(0, index === 2 ? 2 : buildNotes.length).map((note) => <li key={note}>{note}</li>)}
                 </ul>
-                <button type="button" disabled aria-label={`${project.title}网站入口即将开放`}>
+                <a
+                  href={project.liveDemoUrl ?? undefined}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`打开${project.title}产品网站`}
+                >
                   <span>网站入口</span>
-                  <small>即将开放</small>
-                </button>
+                  <small>点击体验产品</small>
+                </a>
               </div>
             </div>
           </motion.article>
@@ -181,7 +186,9 @@ function ContentPractice() {
               />
             </div>
           </div>
-          <button type="button" disabled><span>小红书主页</span><small>即将开放</small></button>
+          <a href="https://xhslink.cn/m/9pJwxuPUm85" target="_blank" rel="noreferrer" aria-label="打开禾子Zoey小红书主页">
+            <span>小红书主页</span>
+          </a>
         </div>
         <div className="social-evidence-item">
           <div className="social-device-mockup" role="img" aria-label="禾子Zoey B站主页手机样机">
@@ -195,7 +202,9 @@ function ContentPractice() {
               />
             </div>
           </div>
-          <button type="button" disabled><span>B站主页</span><small>即将开放</small></button>
+          <a href="https://b23.tv/sfMIQp5" target="_blank" rel="noreferrer" aria-label="打开禾子Zoey B站主页">
+            <span>B站主页</span>
+          </a>
         </div>
       </div>
     </motion.section>
