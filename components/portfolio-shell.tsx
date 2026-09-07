@@ -1,12 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { useCallback, useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { CharacterController } from "@/components/character/character-controller";
 import { CharacterLayer } from "@/components/character/character-layer";
 import { PortfolioContents } from "@/components/content/portfolio-contents";
-import { IntroPackage } from "@/components/intro/intro-package";
 import { ProjectPlayer } from "@/components/project/project-player";
 import { profile } from "@/data/portfolio";
 
@@ -74,13 +72,7 @@ function HeroProfile() {
 }
 
 function PortfolioExperience() {
-  const [introVisible, setIntroVisible] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const reduce = Boolean(useReducedMotion());
-  const completeIntro = useCallback(() => {
-    jumpToPageTop();
-    setIntroVisible(false);
-  }, []);
 
   useLayoutEffect(() => {
     const previousRestoration = window.history.scrollRestoration;
@@ -94,37 +86,15 @@ function PortfolioExperience() {
     };
   }, []);
 
-  useEffect(() => {
-    document.body.classList.toggle("page-locked", introVisible);
-    return () => document.body.classList.remove("page-locked");
-  }, [introVisible]);
-
   return (
-    <>
-      <motion.div
-        className={`portfolio-home ${!introVisible ? "is-entered" : ""}`}
-        aria-hidden={introVisible || undefined}
-        inert={introVisible ? true : undefined}
-        initial={false}
-        animate={{
-          opacity: introVisible ? 0.72 : 1,
-          scale: !reduce && introVisible ? 0.985 : 1,
-        }}
-        transition={{ duration: reduce ? 0 : 0.7, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <main className="portfolio-canvas">
-          <HeroProfile />
-          <ProjectPlayer currentIndex={currentIndex} onChange={setCurrentIndex} />
-          <CharacterLayer currentProject={currentIndex} />
-        </main>
-        <PortfolioContents />
-      </motion.div>
-
-      <AnimatePresence>
-        {introVisible ? <IntroPackage key="intro" onComplete={completeIntro} /> : null}
-      </AnimatePresence>
-
-    </>
+    <div className="portfolio-home is-entered">
+      <main className="portfolio-canvas">
+        <HeroProfile />
+        <ProjectPlayer currentIndex={currentIndex} onChange={setCurrentIndex} />
+        <CharacterLayer currentProject={currentIndex} />
+      </main>
+      <PortfolioContents />
+    </div>
   );
 }
 
